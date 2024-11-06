@@ -1,0 +1,55 @@
+<mat-card appearance="outlined" class="custom-card">
+  <mat-card-header>
+    <mat-card-title>MLT</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row">
+      <div class="col d-flex flex-column align-items-center">
+        <ngx-gauge [type]="'arch'" [value]="data.temperatura" [label]="'Temperatura'" [append]="'ºC'" [min]="0"
+          [max]="100" [cap]="'butt'" [thick]="10" [foregroundColor]="'#DA4F49'" [backgroundColor]="'#ffffff'"
+          [size]="180">
+        </ngx-gauge>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col d-flex flex-column align-items-center">
+            <div class="form-group">
+              <label>SET POINT</label>
+              <input type="number" class="form-control" [(ngModel)]="data.setPoint" (change)="mltSetPoint()">
+            </div>
+          </div>
+          <div class="col d-flex flex-column align-items-center">
+            <div class="switch">
+              <div class="form-group">
+                <label>RESISTÊNCIA</label>
+                <div>
+                  <button type="button"
+                    [ngClass]="{'btn': true, 'btn-success': data.resistencia, 'btn-danger': !data.resistencia}"
+                    (click)="mltResistencia()">
+                    {{data.resistencia ? 'ON':'OFF'}}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="switch">
+              <div class="form-group">
+                <label>RECIRCULAÇÃO</label>
+                <div>
+                  <button type="button"
+                    [ngClass]="{'btn': true, 'btn-success': data.recirculacao, 'btn-danger': !data.recirculacao}"
+                    (click)="mltRecirculacao()">
+                    {{data.recirculacao ? 'ON':'OFF'}}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

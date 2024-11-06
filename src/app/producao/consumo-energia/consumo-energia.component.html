@@ -1,0 +1,22 @@
+<mat-card appearance="outlined" class="custom-card">
+  <mat-card-header>
+    <mat-card-title>Info</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row ">
+      <div class="col d-flex flex-column align-items-center"><ngx-gauge [type]="'arch'" [value]="data.consumo" [label]="'Consumo'" [append]="'hw/h'"
+          [min]="0" [max]="100" [cap]="'butt'" [thick]="10" [foregroundColor]="'#DA4F49'" [backgroundColor]="'#ffffff'"
+          [size]="180">
+        </ngx-gauge></div>
+      <div class="col d-flex flex-column align-items-center">
+        <ngx-gauge [type]="'arch'" [value]="data.potencia" [label]="'Potência'" [append]="'W'"
+          [min]="0" [max]="100" [cap]="'butt'" [thick]="10" [foregroundColor]="'#DA4F49'" [backgroundColor]="'#ffffff'"
+          [size]="180">
+        </ngx-gauge></div>
+      <div class="col d-flex flex-column align-items-center"><ngx-gauge [type]="'arch'" [value]="data.corrente" [label]="'Corrente'" [append]="'A'"
+          [min]="0" [max]="100" [cap]="'butt'" [thick]="10" [foregroundColor]="'#DA4F49'" [backgroundColor]="'#ffffff'"
+          [size]="180">
+        </ngx-gauge></div>
+    </div>
+  </mat-card-content>
+</mat-card>
